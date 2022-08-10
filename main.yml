@@ -1,0 +1,4 @@
+- name: Copy using inline content
+  ansible.builtin.copy:
+    content: '# This file was moved to /etc/other.conf'
+    dest: /home/thanishkumar/Desktop/ansible project
