@@ -1,10 +1,5 @@
 ---
-- name: This is a hello-world example
-  hosts: thanishkumar-virtual-machine
-  tasks:
-    - name: Create a file called 'Desktop/New Folder/main.txt' with the content 'hello world'.
-      copy:
-        content: hello worldn
-        dest: Home/Desktop/New Folder/main.txt
-
-
+- name: create an empty file if it doesn't exist
+  file:
+    path: /home/thanishkumar/demo project/test_file
+    state: touch

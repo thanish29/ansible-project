@@ -1,0 +1,19 @@
+---
+- name: get_url module demo
+  hosts: localhost
+  become: true
+  vars:
+    myurl: "https://releases.ansible.com/ansible/ansible-2.9.25.tar.gz"
+    mycrc: "sha256:https://releases.ansible.com/ansible/ansible-2.9.25.tar.gz.sha"
+    mydest: "/home/thanishkumar/Desktop"
+  tasks:
+    - name: download file
+      ansible.builtin.get_url:
+        url: "{{ myurl }}"
+        dest: "{{ mydest }}"
+        checksum: "{{ mycrc }}"
+        mode: '0644'
+        owner: thanishkumar
+        group: wheel
+
+
